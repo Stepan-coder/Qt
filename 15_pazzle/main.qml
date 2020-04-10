@@ -2,7 +2,6 @@ import QtQuick 2.13
 import QtQuick.Window 2.13
 import QtQuick.Controls 2.12
 
-
 Window
 {
     id: window
@@ -37,7 +36,6 @@ Window
             onClicked:
             {
                 signInUp = true
-                RegistrationForm.cleanUp
             }
         }
 
@@ -58,7 +56,6 @@ Window
             onClicked:
             {
                 signInUp = false
-                LogInForm.cleanUp
             }
         }
     }

@@ -21,8 +21,8 @@ private:
     QNetworkAccessManager _net;
 
 signals:
-    void registerOk(QString);
-    void authOk(QString, QString);
+    void registerCompleted(QString);
+    void authOkCompleted(QString, QString);
 };
 
 #endif // AUTHMANAGER_HPP

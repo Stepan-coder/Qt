@@ -28,7 +28,7 @@ void AuthManager::authenticate(const QString &login,
         QString errorMsg = reply->errorString();
         QJsonObject obj = QJsonDocument::fromJson(reply->readAll()).object();
         QString token = obj.value("token").toString();
-        authOk(reply -> errorString(), token);
+        authOkCompleted(reply -> errorString(), token);
         reply -> deleteLater();
     });
 }
@@ -46,19 +46,7 @@ void AuthManager::registering(const QString &login,
     QByteArray bodyData = QJsonDocument(body).toJson();
     QNetworkReply *reply = _net.post(request, bodyData);
     connect(reply, &QNetworkReply::finished, [this, reply](){
-        emit registerOk(reply -> errorString());
+        emit registerCompleted(reply -> errorString());
         reply -> deleteLater();
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-

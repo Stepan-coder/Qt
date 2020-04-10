@@ -35,7 +35,7 @@ Item
             id: singUpPassword
             width: Window.width - 30
             placeholderText: "password..."
-            echoMode: "Password"
+            echoMode: TextInput.Password
             font.pixelSize: 20
         }
 
@@ -43,8 +43,8 @@ Item
         {
             id: singUpRepeat
             width: Window.width - 30
-            placeholderText: "repeat password..."
-            echoMode: "Password"
+            placeholderText: "Please,repeat password..."
+            echoMode: TextInput.Password
             font.pixelSize: 20
         }
 
@@ -82,7 +82,7 @@ Item
             anchors.horizontalCenter: parent.horizontalCenter
             onClicked:
             {
-                if ((singUpPassword.text != singUpRepeat.text) && !signInUp)
+                if (singUpPassword.text != singUpRepeat.text)
                     singUpPasswordError.visible = true
                 else
                 {
@@ -92,15 +92,4 @@ Item
             }
         }
     }
-
-    function cleanUp()
-    {
-        signInUp = false
-        singUpLogin.text = ''
-        singUpPassword.text = ''
-        singUpRepeat.text = ''
-        singUpNick.text = ""
-        singUpLoading.visible = false
-    }
-
 }

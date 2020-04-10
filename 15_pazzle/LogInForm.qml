@@ -22,7 +22,6 @@ Item
             color: "black"
         }
 
-
         TextField
         {
             id: singInLogin
@@ -38,7 +37,7 @@ Item
             width: Window.width - 30
             anchors.horizontalCenter: parent.horizontalCenter
             placeholderText: "password..."
-            echoMode: "Password"
+            echoMode: TextInput.Password
             font.pixelSize: 20
         }
 
@@ -57,15 +56,5 @@ Item
             anchors.horizontalCenter: parent.horizontalCenter
             visible: false
         }
-    }
-
-
-
-    function cleanUp()
-    {
-        signInUp = false
-        singInLogin.text = ''
-        singInPassword.text = ''
-        singInLoading.visible = false
     }
 }
