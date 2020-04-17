@@ -14,7 +14,7 @@ AuthManager::AuthManager(QObject *parent) : QObject(parent)
 void AuthManager::auth(const QString &login, const QString &password)
 {
     setIsAuthProcessing(true);
-    QUrl url ("http://127.0.0.1:64862/auth");
+    QUrl url ("http://127.0.0.1:62878/auth");
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader,
                       "application/json");
@@ -43,7 +43,7 @@ void AuthManager::auth(const QString &login, const QString &password)
 void AuthManager::reg(const QString &login, const QString &password)
 {
     setIsRegProcessing(true);
-    QUrl url ("http://127.0.0.1:64862/register");
+    QUrl url ("http://127.0.0.1:62878/register");
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader,
                       "application/json");

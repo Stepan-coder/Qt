@@ -12,18 +12,17 @@ Item
         id: registerManager
         onRegisterFinished:
         {
-//            console.log("Reg finished!");
             isRegProcessing = false;
             r_reg.visible = true
             r_reg.title = "Reg finished!"
+            r_reg.text = "РЕГИСТРАЦИЯ ЗАВЕРШЕНА!"
         }
         onRegisterFailed:
         {
-//            console.log("Reg failed!");
-//            console.log(error);
+            isRegProcessing = false;
             r_reg.visible = true
             r_reg.title = "Reg failed!"
-            r_reg.text = error
+            r_reg.text = "ВОЗНИКЛА ОШИБКА: " + error
         }
     }
 

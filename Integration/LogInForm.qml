@@ -12,19 +12,16 @@ Item
         id: authManager
         onAuthFinished:
         {
-//            console.log("Auth finished!");
-//            console.log(token);
             m_auth.visible = true
             m_auth.title = "Auth finished!"
-            m_auth.text = token
+            m_auth.text = "ВЫ ВОШЛИ!"
+            m_auth.detailedText = "Ваш токен: " + token
         }
         onAuthFailed:
         {
-//            console.log("Auth failed!");
-//            console.log(error);
             m_auth.visible = true
             m_auth.title = "Auth failed!"
-            m_auth.text = error
+            m_auth.text = "ВОЗНИКЛА ОШИБКА: " + error
         }
     }
 
